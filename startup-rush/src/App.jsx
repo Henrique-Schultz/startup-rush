@@ -1,14 +1,12 @@
-import { useState } from 'react'
+import { useState } from "react";
+import BoasVindas from "./pages/BoasVindas.jsx";
 
 function App() {
-
   return (
     <>
-      <div>
-        <img src={startupRushLogo} className="logo" alt="Startup Rush logo" />
-      </div>
+      <BoasVindas />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
