@@ -1,16 +1,13 @@
-.quantas-startups{
+.titulo {
+    color: white;
+    font-size: 40px;
+}
+
+.cadastro-startups {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     height: 100vh;
-}
-
-.titulo {
     color: white;
-}
-
-.buttons-container{
-    gap: 20px;
-    display: flex;
 }

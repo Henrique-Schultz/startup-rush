@@ -1,4 +1,4 @@
-import StartupRushLogo from '../../../assets/startupRushLogo.png';
+import StartupRushLogo from '../../assets/startupRushLogo.png';
 import './Logo.css';
 
 
