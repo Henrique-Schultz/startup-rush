@@ -1,0 +1,28 @@
+.lista {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #00ffaa2e;
+  border-radius: 24px;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+.card {
+  font-size: 14px;
+  height: 72px;
+  border: 1px solid #00ffaa;
+  border-radius: 12px;
+  color: #00ffaa;
+  display: flex;
+  width: 120px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: normal;
+}
+
+.card-vazio {
+  opacity: 20%;
+}

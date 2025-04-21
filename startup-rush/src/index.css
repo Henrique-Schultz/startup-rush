@@ -2,6 +2,7 @@ body {
   margin: 0;
   background-color: #0b0b0b;
   font-family: "Inter", "Calibri", sans-serif;
+  padding: 25px;
 }
 
 body::before {

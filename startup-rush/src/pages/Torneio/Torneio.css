@@ -1,0 +1,167 @@
+.torneio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0px;
+  align-items: center;
+  justify-content: start;
+  scale: 0.9
+}
+
+.torneio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 10px;
+}
+
+.fase1 {
+  display: flex;
+  width: 1260px;
+  height: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background-image: url("/../torneio-background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+.fase1-left {
+  height: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+[class^="startup"] {
+  border: 1px solid #00ffaa;
+  background-color: #1a1a1a;
+  color: #00ffaa;
+  border-radius: 10px;
+  height: 72px;
+  width: 120px;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.fase1-right {
+  height: 100;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+}
+
+.fase2 {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
+
+.fase2-left {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 185px;
+  padding-top: 5px;
+  padding-left: 28px;
+  justify-content: center;
+}
+
+[class^="semifinalista"] {
+  border: 1px solid #00ffaa;
+  background-color: #1a1a1a;
+  color: #00ffaa;
+  border-radius: 10px;
+  height: 72px;
+  width: 120px;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.fase2-right {
+    flex-grow: 1;
+    flex-basis: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 185px;
+    padding-top: 5px;
+    padding-right: 28px;
+    justify-content: center;
+    align-items: end;
+}
+
+.final {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.final-left {
+  height: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+[class^="finalista"] {
+    border: 1px solid #00ffaa;
+    background-color: #1a1a1a;
+    color: #00ffaa;
+    border-radius: 10px;
+    height: 72px;
+    width: 120px;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.final-right {
+  height: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding-right: 10px;
+  justify-content: center;
+}
+
+.trofeu {
+  font-size: 40px;
+  background-color: rgb(124, 0, 0);
+}
