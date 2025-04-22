@@ -1,6 +1,7 @@
 // Torneio.jsx
 import React, { useState } from "react";
-import TrophyDisable from "/trophy.png";
+import Trophy from "/trophy.png";
+import TrophyDisable from "/trophy-disable.png";
 import "./Torneio8.css";
 import ListaStartups from "../../components/ListaStartups/ListaStartups";
 import PitchModal from "../../components/PitchModal/PitchModal";
@@ -26,7 +27,7 @@ function Torneio8({ startups, numStartups }) {
   ]);
   const [finalistasArray, setFinalistasArray] = useState([null, null]);
   const [modalPitchList, setModalPitchList] = useState(null);
-
+  const [campeao, setCampeao] = useState(null);
 
   function sortearStartup(index) {
     const indiceSorteado = Math.floor(
@@ -40,44 +41,47 @@ function Torneio8({ startups, numStartups }) {
     const novoArraySorteadas = [...startupsSorteadas];
     novoArraySorteadas[index] = startupSorteada;
     setStartupsSorteadas(novoArraySorteadas);
-    if(novoArrayNaoSorteadas.length === 0) {
+    if (novoArrayNaoSorteadas.length === 0) {
       setFase(2);
     }
   }
-
 
   return (
     <div className="torneio">
       <ListaStartups startups={startupsNaoSorteadas} />
       {modalPitchList && (
-      <PitchModal
-        pitchList={modalPitchList.lista}
-        semifinalIndex={modalPitchList.index}
-
-        onSubmit={(vencedora, index) => {
-          if(fase == 3){
-            const novaLista = [...finalistasArray];
-            novaLista[index] = vencedora;
-            setFinalistasArray(novaLista);
-            setModalPitchList(null);
-            if (novaLista.every((s) => s !== null)) {
-              setFase(4);
+        <PitchModal
+          pitchList={modalPitchList.lista}
+          semifinalIndex={modalPitchList.index}
+          onSubmit={(vencedora, index) => {
+            if (fase == 4) {
+              setCampeao(vencedora);
+              setFase(5);
+              setModalPitchList(null);
             }
-          }
 
-            if(fase == 2){
-            const novaLista = [...semifinalistasArray];
-            novaLista[index] = vencedora;
-            setSemifinalistasArray(novaLista);
-            setModalPitchList(null);
-            if (novaLista.every((s) => s !== null)) {
-              setFase(3);
+            if (fase == 3) {
+              const novaLista = [...finalistasArray];
+              novaLista[index] = vencedora;
+              setFinalistasArray(novaLista);
+              setModalPitchList(null);
+              if (novaLista.every((s) => s !== null)) {
+                setFase(4);
+              }
             }
-          }
-        }}
-      />
-    )}
 
+            if (fase == 2) {
+              const novaLista = [...semifinalistasArray];
+              novaLista[index] = vencedora;
+              setSemifinalistasArray(novaLista);
+              setModalPitchList(null);
+              if (novaLista.every((s) => s !== null)) {
+                setFase(3);
+              }
+            }
+          }}
+        />
+      )}
 
       <div class="torneio-container">
         <div class="fase1">
@@ -131,27 +135,23 @@ function Torneio8({ startups, numStartups }) {
             )}
           </div>
 
-
           <div class="fase2">
-
             <div className="fase2-left">
-
-
               {semifinalistasArray[0] === null ? (
                 <div className="vazia-semifinalista1">
                   {fase === 2 ? (
                     <button
-                    className="pitch1"
-                    onClick={() =>
-                      setModalPitchList({
-                        lista: [startupsSorteadas[0], startupsSorteadas[1]],
-                        index: 0,
-                      })
-                    }
-                  >
-                    Pitch
-                  </button>
-                    ):(
+                      className="pitch1"
+                      onClick={() =>
+                        setModalPitchList({
+                          lista: [startupsSorteadas[0], startupsSorteadas[1]],
+                          index: 0,
+                        })
+                      }
+                    >
+                      Pitch
+                    </button>
+                  ) : (
                     <label></label>
                   )}
                 </div>
@@ -161,24 +161,21 @@ function Torneio8({ startups, numStartups }) {
                 </div>
               )}
 
-
-
-
               {semifinalistasArray[1] === null ? (
                 <div className="vazia-semifinalista2">
                   {fase === 2 ? (
                     <button
-                    className="pitch2"
-                    onClick={() =>
-                      setModalPitchList({
-                        lista: [startupsSorteadas[2], startupsSorteadas[3]],
-                        index: 1,
-                      })
-                    }
-                  >
-                    Pitch
-                  </button>
-                    ):(
+                      className="pitch2"
+                      onClick={() =>
+                        setModalPitchList({
+                          lista: [startupsSorteadas[2], startupsSorteadas[3]],
+                          index: 1,
+                        })
+                      }
+                    >
+                      Pitch
+                    </button>
+                  ) : (
                     <label></label>
                   )}
                 </div>
@@ -189,27 +186,26 @@ function Torneio8({ startups, numStartups }) {
               )}
             </div>
 
-
-
-            
             <div class="final">
-
               <div class="final-left">
-              {finalistasArray[0] === null ? (
+                {finalistasArray[0] === null ? (
                   <div className="vazia-finalista1">
                     {fase === 3 ? (
                       <button
-                      className="pitch5"
-                      onClick={() =>
-                        setModalPitchList({
-                          lista: [semifinalistasArray[0], semifinalistasArray[1]],
-                          index: 0,
-                        })
-                      }
-                    >
-                      Pitch
-                    </button>
-                      ):(
+                        className="pitch5"
+                        onClick={() =>
+                          setModalPitchList({
+                            lista: [
+                              semifinalistasArray[0],
+                              semifinalistasArray[1],
+                            ],
+                            index: 0,
+                          })
+                        }
+                      >
+                        Pitch
+                      </button>
+                    ) : (
                       <label></label>
                     )}
                   </div>
@@ -220,26 +216,49 @@ function Torneio8({ startups, numStartups }) {
                 )}
               </div>
 
-
-              <img src={TrophyDisable} className="trofeu" alt="Trophy Disable" />
-
+              {fase === 4 ? (
+                <img
+                  src={Trophy}
+                  className="trofeu"
+                  onClick={() =>
+                    setModalPitchList({
+                      lista: [finalistasArray[0], finalistasArray[1]],
+                      index: 0,
+                    })
+                  }
+                />
+              ) : (
+                <img
+                  src={TrophyDisable}
+                  className="trofeu-disable"
+                  onClick={() =>
+                    setModalPitchList({
+                      lista: [finalistasArray[0], finalistasArray[1]],
+                      index: 0,
+                    })
+                  }
+                />
+              )}
 
               <div class="final-right">
-              {finalistasArray[1] === null ? (
+                {finalistasArray[1] === null ? (
                   <div className="vazia-finalista2">
                     {fase === 3 ? (
                       <button
-                      className="pitch6"
-                      onClick={() =>
-                        setModalPitchList({
-                          lista: [semifinalistasArray[2], semifinalistasArray[3]],
-                          index: 1,
-                        })
-                      }
-                    >
-                      Pitch
-                    </button>
-                      ):(
+                        className="pitch6"
+                        onClick={() =>
+                          setModalPitchList({
+                            lista: [
+                              semifinalistasArray[2],
+                              semifinalistasArray[3],
+                            ],
+                            index: 1,
+                          })
+                        }
+                      >
+                        Pitch
+                      </button>
+                    ) : (
                       <label></label>
                     )}
                   </div>
@@ -249,17 +268,13 @@ function Torneio8({ startups, numStartups }) {
                   </div>
                 )}
               </div>
-              
             </div>
 
-
-
             <div className="fase2-right">
-
               {semifinalistasArray[2] === null ? (
-                  <div className="vazia-semifinalista3">
-                    {fase === 2 ? (
-                      <button
+                <div className="vazia-semifinalista3">
+                  {fase === 2 ? (
+                    <button
                       className="pitch3"
                       onClick={() =>
                         setModalPitchList({
@@ -270,21 +285,20 @@ function Torneio8({ startups, numStartups }) {
                     >
                       Pitch
                     </button>
-                      ):(
-                      <label></label>
-                    )}
-                  </div>
-                ) : (
-                  <div className="semifinalista3">
-                    <label>{semifinalistasArray[2].nome}</label>
-                  </div>
-                )}
+                  ) : (
+                    <label></label>
+                  )}
+                </div>
+              ) : (
+                <div className="semifinalista3">
+                  <label>{semifinalistasArray[2].nome}</label>
+                </div>
+              )}
 
-
-                {semifinalistasArray[3] === null ? (
-                  <div className="vazia-semifinalista4">
-                    {fase === 2 ? (
-                      <button
+              {semifinalistasArray[3] === null ? (
+                <div className="vazia-semifinalista4">
+                  {fase === 2 ? (
+                    <button
                       className="pitch4"
                       onClick={() =>
                         setModalPitchList({
@@ -295,17 +309,15 @@ function Torneio8({ startups, numStartups }) {
                     >
                       Pitch
                     </button>
-                      ):(
-                      <label></label>
-                    )}
-                  </div>
-                ) : (
-                  <div className="semifinalista4">
-                    <label>{semifinalistasArray[3].nome}</label>
-                  </div>
-                )}
-
-
+                  ) : (
+                    <label></label>
+                  )}
+                </div>
+              ) : (
+                <div className="semifinalista4">
+                  <label>{semifinalistasArray[3].nome}</label>
+                </div>
+              )}
             </div>
           </div>
           <div className="fase1-right">
