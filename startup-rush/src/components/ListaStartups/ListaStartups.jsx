@@ -1,6 +1,16 @@
 import "./ListaStartups.css";
 
 function ListaStartups({ startups }) {
+  if (startups.length === 0) {
+    return (
+      <div className="lista vazia">
+        <div className="card card-vazio">
+          <label>Não há startups cadastradas</label>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="lista">
       {startups.map(function (startup, index) {

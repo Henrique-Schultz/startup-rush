@@ -8,7 +8,9 @@
   font-size: 16px;
   font-weight: 600;
   text-align: center;
-  transition: box-shadow 0.3s ease, border 0.3s ease, color 0.3s ease, scale 0.3s ease;
+  transition: box-shadow 0.3s ease, border 0.3s ease, color 0.3s ease,
+    font-size 0.3s ease, scale 0.3s ease;
+  will-change: transform;
 }
 
 .button:hover {
@@ -16,5 +18,7 @@
   box-shadow: 0px 0px 28px 1px #00ffaa81;
   border: 2px solid #00ffaa;
   color: #00ffaa;
+  scale: 1.05;
+  font-size: 16px;
   scale: 1.05;
 }

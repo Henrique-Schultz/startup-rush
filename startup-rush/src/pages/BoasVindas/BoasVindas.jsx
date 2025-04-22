@@ -6,12 +6,10 @@ import './BoasVindas.css';
 function BoasVindas({changePage}) {
 
   return (
-    <>
-        <div className="boas-vindas">
-            <Logo />
-            <Button text="INICIAR TORNEIO" onClick={() => changePage("quantas-startups")}/>
-        </div>
-    </>
+    <div className="boas-vindas">
+        <Logo />
+        <Button text="INICIAR TORNEIO" onClick={() => changePage("quantas-startups")}/>
+    </div>
   );
 }
 
