@@ -6,7 +6,8 @@ import "./Torneio8.css";
 import ListaStartups from "../../components/ListaStartups/ListaStartups";
 import PitchModal from "../../components/PitchModal/PitchModal";
 
-function Torneio8({ startups, numStartups }) {
+
+function Torneio8({ startups, numStartups, changePage }) {
   const [fase, setFase] = useState(1);
   const [startupsNaoSorteadas, setStartupsNaoSorteadas] = useState(startups);
   const [startupsSorteadas, setStartupsSorteadas] = useState([
@@ -58,6 +59,7 @@ function Torneio8({ startups, numStartups }) {
               setCampeao(vencedora);
               setFase(5);
               setModalPitchList(null);
+              changePage("campeao");
             }
 
             if (fase == 3) {

@@ -63,14 +63,16 @@ function CadastroStartups({numStartups, changePage, cadastrarStartup, startups, 
         <>   
             <div className="cadastro-startups">
                 
+
+
+            <ListaStartups startups={startups} />   
+                <Modal onSubmit={handleDadosRecebidos}/>
                 <button className="preencher" onClick={() => { 
                     changePage("torneio");
                     preencherStartupsFake();
                 }}>fill</button>
-
-            <ListaStartups startups={startups} />   
-                <Modal onSubmit={handleDadosRecebidos}/>
             </div>
+            
         </>
     );
 }

@@ -6,6 +6,7 @@ import QuantasStartups from "./pages/QuantasStartups/QuantasStartups.jsx";
 import CadastroStartups from "./pages/CadastroStartups/CadastroStartups.jsx";
 import Torneio8 from "./pages/Torneio/Torneio8.jsx";
 import PitchModal from "./components/PitchModal/PitchModal.jsx";
+import Campeao from "./pages/Campeao/Campeao.jsx";
 
 function App() {
   const [page, setPage] = useState("boas-vindas");
@@ -50,6 +51,7 @@ function App() {
       />
     ),
     "torneio": <Torneio8 startups={startups} changePage={setPage} numStartups={numStartups} />,
+    "campeao": <Campeao startups={startups} changePage={setPage}/>,
   };
 
   return <>{pages[page]}</>;
