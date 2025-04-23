@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Torneio8({ startups, numStartups, changePage }) {
   const [fase, setFase] = useState(1);
-  const [startupsNaoSorteadas, setStartupsNaoSorteadas] = useState(startups);
+
   const [startupsSorteadas, setStartupsSorteadas] = useState([
     null,
     null,
@@ -28,12 +28,15 @@ function Torneio8({ startups, numStartups, changePage }) {
     null,
   ]);
   const [finalistasArray, setFinalistasArray] = useState([null, null]);
-  const [modalPitchList, setModalPitchList] = useState(null);
   const [campeao, setCampeao] = useState(null);
+
+  const [startupsNaoSorteadas, setStartupsNaoSorteadas] = useState(startups);
+  const [modalPitchList, setModalPitchList] = useState(null);
 
   function sortearStartup(index) {
     const indiceSorteado = Math.floor(
-      Math.random() * startupsNaoSorteadas.length
+      Math.random() * startupsNaoSorteadas.length,
+      console.log(campeao)
     );
     const startupSorteada = startupsNaoSorteadas[indiceSorteado];
     const novoArrayNaoSorteadas = startupsNaoSorteadas.filter(
