@@ -1,18 +1,18 @@
-.quantas-startups{
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    flex-direction: column;
-    height: 100vh;
-    gap: 80px;
+.quantas-startups {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  height: 100vh;
+  gap: 80px;
 }
 
 .titulo {
-    color: white;
-    margin-top: 10%;
+  color: white;
+  margin-top: 10%;
 }
 
-.buttons-container{
-    gap: 40px;
-    display: flex;
+.buttons-container {
+  gap: 40px;
+  display: flex;
 }

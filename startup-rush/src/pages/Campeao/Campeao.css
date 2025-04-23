@@ -1,6 +1,6 @@
-.campeao{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+.campeao {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
 }

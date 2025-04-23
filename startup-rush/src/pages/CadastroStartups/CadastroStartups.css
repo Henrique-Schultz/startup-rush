@@ -1,15 +1,36 @@
 .titulo {
-    color: white;
-    font-size: 40px;
+  color: white;
+  font-size: 40px;
 }
 
 .cadastro-startups {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    flex-direction: column;
-    height: 100%;
-    color: white;
-    padding-top: 50px;
-    gap: 50px
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  height: 100%;
+  color: white;
+  padding-top: 30px;
 }
+
+.preencher {
+    width: 70px;
+    height: 35px;
+    background-color: #1a1a1a;
+    border: 2px solid #00ffaa;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    transition: box-shadow 0.3s ease, border 0.3s ease, color 0.3s ease,
+      scale 0.3s ease;
+  }
+  
+  .preencher:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 28px 1px #00ffaa81;
+    border: 2px solid #00ffaa;
+    color: #00ffaa;
+    scale: 1;
+  }

@@ -5,7 +5,8 @@ import TrophyDisable from "/trophy-disable.png";
 import "./Torneio8.css";
 import ListaStartups from "../../components/ListaStartups/ListaStartups";
 import PitchModal from "../../components/PitchModal/PitchModal";
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Torneio8({ startups, numStartups, changePage }) {
   const [fase, setFase] = useState(1);
@@ -49,17 +50,30 @@ function Torneio8({ startups, numStartups, changePage }) {
 
   return (
     <div className="torneio">
+      <ToastContainer
+        toastClassName="custom-toast"
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={true}
+        newestOnTop={true}
+        closeOnClick
+        closeButton={false}
+        rtl={false}
+        pauseOnFocusLoss
+      />
       <ListaStartups startups={startupsNaoSorteadas} />
       {modalPitchList && (
         <PitchModal
           pitchList={modalPitchList.lista}
           semifinalIndex={modalPitchList.index}
-          onSubmit={(vencedora, index) => {
+          onSubmit={(vencedora, index, toastAtivado) => {
             if (fase == 4) {
               setCampeao(vencedora);
               setFase(5);
               setModalPitchList(null);
               changePage("campeao");
+              const audio = new Audio(`/sounds/${vencedora.som}`);
+              audio.play();
             }
 
             if (fase == 3) {
@@ -81,6 +95,7 @@ function Torneio8({ startups, numStartups, changePage }) {
                 setFase(3);
               }
             }
+            if (toastAtivado) toast("SHARK FIGHT!");
           }}
         />
       )}

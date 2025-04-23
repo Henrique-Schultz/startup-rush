@@ -1,12 +1,10 @@
 import ModalPlacar from "../../components/ModalPlacar/ModalPlacar";
 import "./Campeao.css";
 
-function Campeao({startups}) {
-
-
+function Campeao({ startups }) {
   return (
     <div className="campeao">
-      <ModalPlacar startups={startups}/>
+      <ModalPlacar startups={startups} />
     </div>
   );
 }

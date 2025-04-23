@@ -8,7 +8,7 @@
   padding: 0px;
   align-items: center;
   justify-content: start;
-  scale: 0.9
+  scale: 0.9;
 }
 
 .torneio-container {
@@ -105,15 +105,15 @@
 }
 
 .fase2-right {
-    flex-grow: 1;
-    flex-basis: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 185px;
-    padding-top: 5px;
-    padding-right: 28px;
-    justify-content: center;
-    align-items: end;
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 185px;
+  padding-top: 5px;
+  padding-right: 28px;
+  justify-content: center;
+  align-items: end;
 }
 
 .final {
@@ -138,15 +138,15 @@
 }
 
 [class^="finalista"] {
-    border: 1px solid #00ffaa;
-    background-color: #1a1a1a;
-    color: #00ffaa;
-    border-radius: 10px;
-    height: 72px;
-    width: 120px;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
+  border: 1px solid #00ffaa;
+  background-color: #1a1a1a;
+  color: #00ffaa;
+  border-radius: 10px;
+  height: 72px;
+  width: 120px;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .final-right {

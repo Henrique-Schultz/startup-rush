@@ -1,6 +1,5 @@
-import StartupRushLogo from '../../assets/startupRushLogo.png';
-import './Logo.css';
-
+import StartupRushLogo from "../../assets/startupRushLogo.png";
+import "./Logo.css";
 
 function Logo() {
   return (

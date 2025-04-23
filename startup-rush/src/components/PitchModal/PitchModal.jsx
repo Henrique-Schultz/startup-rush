@@ -1,8 +1,5 @@
 import "./PitchModal.css";
 import { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
 
 function PitchModal({ pitchList, onSubmit, semifinalIndex }) {
   const criterios = [
@@ -28,12 +25,8 @@ function PitchModal({ pitchList, onSubmit, semifinalIndex }) {
       0
     );
 
-
-
   return (
-
     <div className="modal-pitch-overlay">
-
       <div className="modal-pitch">
         <label className="titulo-pitch">Pitch</label>
 
@@ -82,7 +75,6 @@ function PitchModal({ pitchList, onSubmit, semifinalIndex }) {
             </p>
           </div>
         </div>
-        <ToastContainer />
 
         <button
           className="button-cadastrar"
@@ -91,19 +83,18 @@ function PitchModal({ pitchList, onSubmit, semifinalIndex }) {
             pitchList[1].pontos += getPontuacao(checks2);
 
             let vencedora = null;
-            if(pitchList[0].pontos > pitchList[1].pontos){
-                vencedora = pitchList[0]
+            let toastAtivado = false;
+            if (pitchList[0].pontos > pitchList[1].pontos) {
+              vencedora = pitchList[0];
+            } else if (pitchList[0].pontos < pitchList[1].pontos) {
+              vencedora = pitchList[1];
+            } else if (pitchList[0].pontos === pitchList[1].pontos) {
+              pitchList[0].pontos += 2;
+              vencedora = pitchList[0];
+              toastAtivado = true;
             }
-            else if(pitchList[0].pontos < pitchList[1].pontos){
-                vencedora = pitchList[1]
-            }
-            else if(pitchList[0].pontos === pitchList[1].pontos){
-                pitchList[0].pontos += 2
-                vencedora = pitchList[0];
-                toast.success("SHARK FIGHT!");
-            }
-            vencedora.pontos += 30
-            onSubmit(vencedora, semifinalIndex);
+            vencedora.pontos += 30;
+            onSubmit(vencedora, semifinalIndex, toastAtivado);
           }}
         >
           Concluído

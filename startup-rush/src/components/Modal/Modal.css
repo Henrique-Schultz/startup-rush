@@ -1,14 +1,15 @@
 .modal {
   width: 380px;
-  height: 280px;
+  height: 355px;
   border: solid #00ffaa 1px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  padding: 35px;
+  padding: 30px;
   gap: 30px;
+  scale: 0.9;
 }
 
 .modal-content {
@@ -16,7 +17,7 @@
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  gap: 20px;
+  gap: 18px;
   width: 100%;
 }
 
@@ -45,7 +46,7 @@
   font-size: 13px;
   text-align: start;
   padding-left: 10px;
-  font-family: 'Inter';
+  font-family: "Inter";
 }
 
 .slogan-container {
@@ -79,7 +80,7 @@
   padding-right: 0px;
   padding-bottom: 5px;
   font-size: 13px;
-  font-family: 'Inter';
+  font-family: "Inter";
 }
 
 /* Scrollbar mais grossa */
@@ -95,11 +96,11 @@
 }
 
 .ano-container {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 4px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 4px;
+  width: 100%;
 }
 
 .label-ano {
@@ -109,14 +110,27 @@
 }
 
 .input-ano {
-    width: 70px;
-    box-sizing: border-box;
-    height: 30px;
-    background-color: #1a1a1a;
-    border: 1px solid #00ffaa;
-    border-radius: 8px;
-    color: #ffffff;
-    font-size: 13px;
-    text-align: start;
-    padding-left: 10px;
+  width: 70px;
+  box-sizing: border-box;
+  height: 30px;
+  background-color: #1a1a1a;
+  border: 1px solid #00ffaa;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 13px;
+  text-align: start;
+  padding-left: 10px;
+}
+
+.dropdown {
+  width: 130px;
+  box-sizing: border-box;
+  height: 30px;
+  background-color: #1a1a1a;
+  border: 1px solid #00ffaa;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 13px;
+  text-align: start;
+  padding-left: 10px;
 }

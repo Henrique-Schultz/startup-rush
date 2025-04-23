@@ -16,21 +16,19 @@ function App() {
   const addStartup = (startup) => {
     const newStartups = [...startups];
     const firstNull = newStartups.findIndex((item) => item === null);
-    if(firstNull !== -1){
+    if (firstNull !== -1) {
       newStartups[firstNull] = startup;
     }
     return setStartups(newStartups);
-    
   };
 
   const fillArray = () => {
-    if(numStartups === 8){
+    if (numStartups === 8) {
       setStartups([null, null, null, null, null, null, null, null]);
-    }
-    else if (numStartups === 4){
+    } else if (numStartups === 4) {
       setStartups([null, null, null, null]);
     }
-  }
+  };
 
   useEffect(() => {
     fillArray();
@@ -39,7 +37,11 @@ function App() {
   const pages = {
     "boas-vindas": <BoasVindas changePage={setPage} />,
     "quantas-startups": (
-      <QuantasStartups chooseNumber={setNumStartups} changePage={setPage} fillArray={fillArray} />
+      <QuantasStartups
+        chooseNumber={setNumStartups}
+        changePage={setPage}
+        fillArray={fillArray}
+      />
     ),
     "cadastro-startups": (
       <CadastroStartups
@@ -50,8 +52,14 @@ function App() {
         setStartups={setStartups}
       />
     ),
-    "torneio": <Torneio8 startups={startups} changePage={setPage} numStartups={numStartups} />,
-    "campeao": <Campeao startups={startups} changePage={setPage}/>,
+    torneio: (
+      <Torneio8
+        startups={startups}
+        changePage={setPage}
+        numStartups={numStartups}
+      />
+    ),
+    campeao: <Campeao startups={startups} changePage={setPage} />,
   };
 
   return <>{pages[page]}</>;

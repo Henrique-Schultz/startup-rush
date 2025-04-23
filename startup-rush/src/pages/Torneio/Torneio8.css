@@ -11,6 +11,14 @@
   scale: 0.9;
 }
 
+.custom-toast {
+  background-color: #1f1f1f;
+  color: #00ffaa;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #00ffaa55;
+  width: 150px;
+}
+
 .torneio-container {
   display: flex;
   justify-content: center;

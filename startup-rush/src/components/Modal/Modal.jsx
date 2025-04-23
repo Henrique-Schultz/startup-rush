@@ -2,17 +2,19 @@ import ButtonCadastrar from "../general/ButtonCadastrar/ButtonCadastrar";
 import "./Modal.css";
 import { useState } from "react";
 
-function Modal({onSubmit}) {
+function Modal({ onSubmit }) {
   const [nome, setNome] = useState("");
   const [slogan, setSlogan] = useState("");
   const [ano, setAno] = useState("");
+  const [somEscolhido, setSomEscolhido] = useState("");
 
   const handleCadastrarClick = () => {
-    if (nome && slogan && ano) {
-      onSubmit({ nome, slogan, ano });
+    if (nome && slogan && ano && somEscolhido) {
+      onSubmit({ nome, slogan, ano, somEscolhido });
       setNome("");
       setSlogan("");
       setAno("");
+      setSomEscolhido("");
     } else {
       alert("Preencha todos os campos!");
     }
@@ -52,10 +54,23 @@ function Modal({onSubmit}) {
             onChange={(e) => setAno(e.target.value)}
           />
         </div>
+
+        <div className="ano-container">
+          <select
+          className="dropdown"
+            value={somEscolhido}
+            onChange={(e) => setSomEscolhido(e.target.value)}
+          >
+            <option value="">Escolha um som</option>
+            <option value="aplauso.mp3">Aplausos 👏</option>
+            <option value="trompete-medieval.mp3">Trompete Medieval 🏰</option>
+            <option value="trompete-real.mp3">Trompete Real 🎺</option>
+            <option value="victory.mp3">Vitória! 🏆</option>
+          </select>
+        </div>
       </div>
 
       <ButtonCadastrar onClick={handleCadastrarClick} />
-
     </div>
   );
 }
